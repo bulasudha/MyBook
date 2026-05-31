@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialZone | Connect & Share</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 🔐 LOGIN SCREEN -->
+    <div id="login-box" class="login-container">
+        <div class="login-card">
+            <h1>🌐 SocialZone</h1>
+            <p>Connect with friends and share your world.</p>
+            <input type="text" id="username-input" placeholder="Enter your name to login..." required>
+            <button onclick="loginUser()">Log In</button>
+        </div>
+    </div>
+
+    <!-- 📱 MAIN APP SCREEN (Hidden by default) -->
+    <div id="app-box" class="main-app" style="display: none;">
+        
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">SocialZone</div>
+            <div class="user-profile">
+                Welcome, <span id="current-user-name">User</span>! 👋
+                <button class="logout-btn" onclick="logoutUser()">Logout</button>
+            </div>
+        </header>
+
+        <div class="app-body">
+            <!-- Left Sidebar: Online Members -->
+            <aside class="sidebar">
+                <h3>🟢 Online Members</h3>
+                <ul id="online-list">
+                    <!-- Dynamic Online list -->
+                </ul>
+            </aside>
+
+            <!-- Main Feed & Chat Area -->
+            <main class="feed-area">
+                
+                <!-- Create Post Box -->
+                <div class="create-post">
+                    <h3>Share Something</h3>
+                    <textarea id="post-text" placeholder="What's on your mind?"></textarea>
+                    <div class="post-actions">
+                        <label for="post-image" class="file-label">🖼️ Add Photo</label>
+                        <input type="file" id="post-image" accept="image/*">
+                        <button class="share-btn" onclick="createNewPost()">Post</button>
+                    </div>
+                    <div id="image-preview-container" style="margin-top:10px;"></div>
+                </div>
+
+                <!-- Feed / Posts Container -->
+                <div id="feed-container">
+                    <!-- Saved posts will appear here -->
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
